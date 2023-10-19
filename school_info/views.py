@@ -65,7 +65,7 @@ def group_edit(request, pk):
     if form.is_valid():
         form.save()
         form.instance.teacher.clear()
-        form.instance.teacher.set(form.cleaned_data["teacher"])
+        form.instance.teacher.set(form.cleaned_data["teachers"])
         form.save()
         return redirect(reverse("group_edit", args=[pk]))
 
